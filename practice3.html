@@ -1,0 +1,33 @@
+<html>
+
+<body>
+
+Enter password: <br>
+<input type="password" id="password1"><br><br>
+
+Re-Enter password: <br>
+<input type="password" id="password2"><br><br>
+
+<button onclick="verify()">Submit</button>
+
+<script>
+function verify() {
+let password1 = document.getElementById("password1").value;
+let password2 = document.getElementById("password2").value;
+
+if (password1.length < 8) {
+alert("Password needs to be 8 characters");
+return;
+}
+
+if (password1 !== password2) {
+alert("Passwords do not match");
+return;
+}
+alert("Passwords are GOOD to GO :)")
+}
+</script>
+</body>
+</html>
+
+

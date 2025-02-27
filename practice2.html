@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic CSS Control</title>
+
+<style> 
+        #paragraph {
+        border-style: solid;
+        padding: 10px;
+        background-image: url("IMG_8299.jpeg");
+	background-size: cover;
+	background-position: center;
+        }
+</style>
+</head>
+
+
+<body>
+	test
+
+    Enter the color below <br>
+    <input type="text" id="color" placeholder="ex: red"><br>
+    Enter the size below <br>
+    <input type="text" id="size" placeholder="ex: 55"><br>
+	<br>Enter the text color below <br>
+	<input type="text" id="textcolor" placeholder="ex: red">
+    <div id="paragraph">
+        <p id="text">
+            Here is dummy text to use for the second practice of this lab<br>
+            I am hoping this works <br>
+            My favorite image is behind this text! <br>
+         </p>
+      
+      </div>
+
+
+<script> 
+	function updateStyles() {
+		let color = document.getElementById("color").value;
+		let size = document.getElementById("size").value;
+		let paragraph = document.getElementById("paragraph");
+		let textcolor = document.getElementById("textcolor").value;
+		let text = document.getElementById("text");
+		
+		if (size && !size.includes("px")) {
+                size += "px";
+            	}
+		paragraph.style.borderColor = color;
+		paragraph.style.borderWidth = size;
+		text.style.color = textcolor;
+		}
+	document.getElementById("color").addEventListener("input", updateStyles);
+	document.getElementById("size").addEventListener("input", updateStyles);
+	document.getElementById("textcolor").addEventListener("input", updateStyles);
+</script>
+      
+</body>
+</html>
+
+
