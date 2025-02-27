@@ -1,0 +1,5 @@
+Collaborations:
+1 - no collaborations
+2 - gpt used to fix issue with javascript, otherwise written solo
+3 - gpt used fix issues with javascript code (by this point i have realized i suck at scripts)
+4 - gpt used to help php - didn't understand php servers at all so needed help 

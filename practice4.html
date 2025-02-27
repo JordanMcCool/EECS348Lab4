@@ -1,1 +1,59 @@
 <html>
+
+
+<head>
+<style>
+table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-image: url("IMG_8299.jpeg");
+        }
+</style>
+</head>
+<body>
+<form method="post">
+
+Enter number:<br><br>
+<input type="number" id="number" name="number" required>
+<button type="submit">Generate Table</button>
+</form>
+
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num = intval($_POST["number"]);
+
+    if ($num > 0) {
+        echo "<h3>Multiplication Table (1 to $num)</h3>";
+        echo "<table>";
+
+        // Print header row
+        echo "<tr><th>&times;</th>";
+        for ($i = 1; $i <= $num; $i++) {
+            echo "<th>$i</th>";
+        }
+        echo "</tr>";
+
+        // Print multiplication table
+        for ($i = 1; $i <= $num; $i++) {
+            echo "<tr><th>$i</th>"; // Row header
+            for ($j = 1; $j <= $num; $j++) {
+                echo "<td>" . ($i * $j) . "</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "<p style='color:red;'>Please enter a positive number.</p>";
+    }
+}
+?>
+</body>
+</html>
